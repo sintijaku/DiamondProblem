@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace DiamondProblemTests
 {
+    [TestFixture]
     public class Tests
     {
         private DiamondCreator _diamondCreator;
@@ -33,7 +34,7 @@ namespace DiamondProblemTests
             var result = _diamondCreator.CreateDiamond("B");
 
             // Assert
-            Assert.That(result[1].Contains("B"));
+            Assert.That(result[1].StartsWith("B"));
             Assert.That(result[1].Count(x => x == 'B') == 2);
         }
 
@@ -84,7 +85,7 @@ namespace DiamondProblemTests
             var result = _diamondCreator.CreateDiamond("C");
 
             // Assert
-            Assert.That(result[2].Contains("C"));
+            Assert.That(result[2].StartsWith("C"));
             Assert.That(result[2].Count(x => x == 'C') == 2);
         }
 

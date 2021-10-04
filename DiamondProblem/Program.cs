@@ -14,7 +14,7 @@ namespace DiamondProblem
         public List<string> CreateDiamond(string letter)
         {
             var alphabetDictionary = CreateDictionary();
-            var widestPoint = alphabetDictionary.Where(x => x.Value == letter.ToString()).Select(y => y.Key).FirstOrDefault();
+            int widestPoint = alphabetDictionary.Where(x => x.Value == letter.ToString()).Select(y => y.Key).FirstOrDefault();
             int innerSpaces = 0;
             int outerSpaces = widestPoint;
             var diamondHalf = new List<string>();
@@ -46,7 +46,7 @@ namespace DiamondProblem
 
         private string CreateSpaces(int numberOfSpaces)
         {
-            var spaces = string.Empty;
+            string spaces = string.Empty;
             for (int i = 0; i < numberOfSpaces; i++)
             {
                 spaces += " "; 
